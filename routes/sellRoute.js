@@ -1,6 +1,6 @@
-//const auth=require("../middelware/Auth")
-//var multer  = require('multer')
-//var upload = multer({ dest: 'uploads/' })
+
+
+const mullterMiddelware=require("../middelware/multerMiddelware")
 const express = require('express')
 
 const router = express.Router()
@@ -9,7 +9,7 @@ const {addSell}=require("../controller/sellController")
 
 
 
-router.post("/addSell",addSell)
+router.post("/addSell",mullterMiddelware.array("images",4),addSell)
 
 
 
