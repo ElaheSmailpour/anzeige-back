@@ -27,7 +27,8 @@ exports.loginUser = async (req, res, next) => {
 			res.status(200).json({
 				message: 'You are log it',
 				token: token,
-				username: user.username
+				username: user.username,
+				name:user.name
 
 			})
 		} else {

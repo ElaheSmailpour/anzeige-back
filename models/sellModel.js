@@ -11,7 +11,11 @@ const sellSchema = new mongoose.Schema({
        ref: "category"
 
      },
-   
+   user: {
+    type: mongoose.Schema.Types.ObjectId,
+   ref: "userSell"
+
+ },
     selltype: { enum: ["request", "bid"], type: String },
     locationType: { enum: ["private", "commercial"], type: String }
 
