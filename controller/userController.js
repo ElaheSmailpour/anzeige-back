@@ -23,7 +23,7 @@ exports.loginUser = async (req, res, next) => {
 			let token = jwt.sign({
 				username: user.username,
 				_id: user._id,
-			}, process.env.JWT,{expiresIn:"2h"})
+			}, process.env.JWT,{expiresIn:"1h"})
 			res.status(200).json({
 				message: 'You are log it',
 				token: token,

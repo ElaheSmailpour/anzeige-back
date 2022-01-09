@@ -25,6 +25,16 @@ exports.addSell = async (req, res, next) => {
 
     }
 }
+//editSell
+exports.editSell = (req, res) => {
+    const id=req.params.id
+    sellmodel.findByIdAndUpdate(id,{$set:req.body}).then((success) => {
+
+        res.status(200).send(success);
+    }).catch((error) => {
+        res.status(400).send(" get editSell error " + error);
+    });
+}
 //detailSell
 exports.detailSell = (req, res) => {
     const { id } = req.params;
