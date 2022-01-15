@@ -38,7 +38,7 @@ exports.editSell = (req, res) => {
 //detailSell
 exports.detailSell = (req, res) => {
     const { id } = req.params;
-    sellmodel.findById(id).then((success) => {
+    sellmodel.findById(id).populate("category").then((success) => {
         res.status(200).send(success);
     }).catch((error) => {
         res.status(400).send(" get detailSell error " + error);
